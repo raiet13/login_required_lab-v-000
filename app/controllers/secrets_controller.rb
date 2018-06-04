@@ -1,7 +1,9 @@
 class SecretsController < ApplicationController
 
   def index
-    logged_in?
+    if !logged_in?
+      redirect_to '/login'
+    end
     # puts "logged in"
   end
 
